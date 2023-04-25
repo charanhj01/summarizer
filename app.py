@@ -2,7 +2,7 @@ tokenizer = PegasusTokenizer.from_pretrained('google/pegasus-xsum')
 model = PegasusForConditionalGeneration.from_pretrained('google/pegasus-xsum')
 app = Flask("Text Summariser")
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/summarizer', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         text = request.form['text']
