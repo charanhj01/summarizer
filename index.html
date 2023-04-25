@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Text Summarizer</title>
+    </head>
+    <body>
+        <form method="POST" action="/">
+            <label for="text">Enter text:</label>
+            <br>
+            <textarea name="text" rows="10" cols="80"></textarea>
+            <br>
+            <label for="min_length">Minimum length:</label>
+            <input type="range" name="min_length" min="1" max="200" value="50">
+            <br>
+            <label for="max_length">Maximum length:</label>
+            <input type="range" name="max_length" min="50" max="500" value="150">
+            <br>
+            <input type="submit" value="Summarize">
+        </form>
+        {% if summary %}
+        <hr>
+        <h3>Summary:</h3>
+        <p>{{ summary }}</p>
+        {% endif %}
+    </body>
+</html>
